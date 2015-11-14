@@ -1,0 +1,10 @@
+*.pyc
+*.sqlite*
+*__pycache__*
+mysite/secrets.json
+mysite/settings.py.bak
+
+# admin stuff
+static/admin/*
+
+
