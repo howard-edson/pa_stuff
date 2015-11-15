@@ -1,4 +1,4 @@
-# PA_stuff
+# pa_stuff repo
 Exploring pythonanywhere for django hosting.
 
 ## polls
