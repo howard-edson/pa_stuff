@@ -1,0 +1,59 @@
+{% extends "recipes/recipe_base.html" %}
+
+{% block content %}
+{{ block.super }} {% comment %} bring in the nav menu {% endcomment %}
+<div class="container">
+
+<h3>Recipes</h3>
+
+{% if recipe_list %}
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>name</th>
+        <th>meal_type</th>
+        <th>description</th>
+        <th>vegetarian</th>
+        <th>gluten_free</th>
+        <th>nut_free</th>
+      </tr>
+    </thead>
+    <tbody>
+{% for recipe in recipe_list %}
+  <tr>
+    <td>{{ recipe.name }}</td>
+    <td>{{ recipe.meal_type }}</td>
+    <td>{{ recipe.description }}</td>
+    <td>
+      {% if recipe.vegetarian %}
+        <span class="glyphicon glyphicon-ok" aria-hidden="true" style="color:green"></span>
+      {% else %}
+        <span class="glyphicon glyphicon-warning-sign" aria-hidden="true" style="color:orange"></span>
+      {% endif %}
+    </td>
+    <td>
+      {% if recipe.gluten_free %}
+        <span class="glyphicon glyphicon-ok" aria-hidden="true" style="color:green"></span>
+      {% else %}
+        <span class="glyphicon glyphicon-warning-sign" aria-hidden="true" style="color:orange"></span>
+      {% endif %}
+    </td>
+    <td>
+      {% if recipe.nut_free %}
+        <span class="glyphicon glyphicon-ok" aria-hidden="true" style="color:green"></span>
+      {% else %}
+        <span class="glyphicon glyphicon-warning-sign" aria-hidden="true" style="color:orange"></span>
+      {% endif %}
+    </td>
+
+  </tr>
+{% endfor %}
+    </tbody>
+  </table>
+
+{% else %}
+    <p>No recipes are available.</p>
+{% endif %}
+
+</div>
+{% endblock content %}

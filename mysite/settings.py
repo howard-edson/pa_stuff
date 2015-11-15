@@ -19,7 +19,6 @@ from django.core.exceptions import ImproperlyConfigured
 
 # json-based secrets module
 with open(os.path.join(BASE_DIR, 'mysite/secrets.json')) as f:
-
     secrets = json.loads(f.read())
 
 def get_secret(setting, secrets=secrets):

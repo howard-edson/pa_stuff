@@ -1,5 +1,7 @@
 from django.db import models
 
+#Models: Ingredient, Recipe, RecipeIngredient, RecipeStep
+
 
 class Ingredient(models.Model):
     # ex: salt, flour, ground beef
